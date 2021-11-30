@@ -15,7 +15,7 @@
 .DS_Store
 
 # avoid node modules folder
-/node_module 
+/node_modules 
 
 # avoid build folder 
 /dist 
