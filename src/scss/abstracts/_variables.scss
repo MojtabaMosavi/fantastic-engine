@@ -1,3 +1,27 @@
 :root {
-  --white: #fff;
+  // gradients
+  --scissors-gradient-from: hsl(39, 89%, 49%);
+  --scissors-gradient-to: hsl(40, 84%, 53%);
+  --paper-gradient-from: hsl(230, 89%, 62%);
+  --paper-gradient-to: hsl(230, 89%, 65%);
+  --rock-gradient-from: hsl(349, 71%, 52%);
+  --rock-gradient-to: hsl(349, 70%, 56%);
+  --lizard-gradient-from: hsl(261, 73%, 60%);
+  --lizard-gradient-to: hsl(261, 72%, 63%);
+  --cyan-gradient-form: hsl(189, 59%, 53%);
+  --cyan-gradient--to: hsl(189, 58%, 57%);
+  --bg-radial-gradient-from: hsl(214, 47%, 23%);
+  --bg-radial-gradient-to: hsl(237, 49%, 15%);
+
+  // text colors
+  --Dark-Text: hsl(229, 25%, 31%);
+  --Score-Text: hsl(229, 64%, 46%);
+  --Header-Outline: hsl(217, 16%, 45%);
 }
+
+// breakpoints
+$breakpoints: (
+  "tablet": 43em,
+  "laptop": 62em,
+  "desktop": 82em,
+);
