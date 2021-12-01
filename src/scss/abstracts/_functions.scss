@@ -1,0 +1,24 @@
+@use "sass:math";
+/*-------------------------------------------*\
+    #functions
+\*--------------------------------------------*/
+
+/// convert pixels to rem
+/// @param{number} @pixel
+/// pixel value to be converted to rem
+@function rem($pixel, $content: 16px) {
+  @return math.div(($pixel, $content)) * 1rem;
+}
+
+// used to define fulid properties
+@function calc-interpolation($min-screen, $min-value, $max-screen, $max-value) {
+  $ratio: math.div(($max-value - $min-value), ($max-screen - $min-screen));
+  $value: $min-value - $ratio * $min-screen;
+
+  $operand: "+";
+  @if ($value < 0) {
+    $operand: "-";
+    $value: abs($value);
+  }
+  @return calc(#{$ratio * 100}vw #{$operand} #{$value});
+}
