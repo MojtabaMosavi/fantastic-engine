@@ -1,6 +1,6 @@
 // a general purpose container for positioning content
 .container {
-  max-width: 34rem;
+  max-width: $container-mobile;
   margin: 0 auto;
 }
 
