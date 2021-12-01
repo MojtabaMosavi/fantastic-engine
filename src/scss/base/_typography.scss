@@ -1,0 +1,16 @@
+/*-------------------------------------------*\
+    #typography
+\*--------------------------------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@700&family=Red+Hat+Text:wght@700&display=swap");
+
+:root {
+  --primary-font: "Barlow Semi Condensed", sans-serif;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: var(--primary-font);
+}
