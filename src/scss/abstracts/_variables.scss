@@ -1,6 +1,7 @@
 /*-------------------------------------------*\
     #variables
 \*--------------------------------------------*/
+
 :root {
   // gradients
   --scissors-gradient-from: hsl(39, 89%, 49%);
@@ -20,6 +21,10 @@
   --Dark-Text: hsl(229, 25%, 31%);
   --Score-Text: hsl(229, 64%, 46%);
   --Header-Outline: hsl(217, 16%, 45%);
+
+  // container breakpoints
+  $container-mobile: 34rem;
+  $container-desktop: 62rem;
 }
 
 // breakpoints

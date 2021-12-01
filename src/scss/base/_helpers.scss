@@ -1,0 +1,16 @@
+// a general purpose container for positioning content
+.container {
+  max-width: 34rem;
+  margin: 0 auto;
+}
+
+// hides the cotent from being displayed visually
+.sr-only {
+  display: absolute;
+  width: 1px;
+  height: 1px;
+  clip: inset(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  clip-path: inset(1px, 1px, 1px, 1px);
+  white-space: no-wrap;
+}
