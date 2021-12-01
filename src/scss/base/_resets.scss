@@ -1,0 +1,77 @@
+/*-------------------------------------------*\
+    #resets
+\*--------------------------------------------*/
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+[hidden] {
+  display: none;
+}
+
+section,
+article,
+aside,
+header,
+main.footer {
+  display: block;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  cursor: pointer;
+
+  &:focus,
+  &:hover {
+    outline: max(1px, 0.1em) dashed var(--white);
+    outline-offset: 0.25em;
+  }
+}
+
+// display outline when tabbed but not when hovered
+button {
+  cursor: pointer;
+
+  &:focus {
+    outline: max(1px, 0.1em) dashed;
+    outline-offset: 0.25em;
+  }
+
+  // browser that don't support this default to fisrt rule.
+  &:not(:focus-visible) {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: max(1px, 0.1em) dashed;
+    outline-offset: 0.25em;
+  }
+}
+
+/* Remove all animations and transitions
+for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
