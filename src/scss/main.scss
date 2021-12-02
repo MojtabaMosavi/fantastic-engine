@@ -3,3 +3,6 @@
 @use "./base";
 @use "./components";
 @use "./layout";
+
+// making the content of abstract folder globaly scoped
+@import "./abstracts/index";

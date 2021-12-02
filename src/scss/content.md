@@ -1,8 +1,16 @@
 /\*\*
 
-- Abstracts.......................... functions, mixins and variables.
+- Contents
 -
-- Base...............................Global resets, typography and helper classes.
+- Abstracts
+- Fucntions.......................... globaly used functions.
+- mixins.............................. global mixins.
+- variables............................GLobal color and breakpoint variables.
+-
+- Base...............................
+- resets............................. contains global resets that apply to whole project.
+- typography......................... global typography rules and resets
+- helper.............................. heper classs.
 -
 - Components........................ Resuable components.
 -
