@@ -25,9 +25,13 @@
   --black: hsl(0, 0%, 0%);
 
   // container breakpoints
-  $container-mobile: 34rem;
-  $container-desktop: 62rem;
+  --container-mobile: 34rem;
+  --container-desktop: 62rem;
 }
+
+// desktop and mobile
+$mobile-width: 23.4375rem;
+$desktop-width: 85.375rem;
 
 // breakpoints
 $breakpoints: (
