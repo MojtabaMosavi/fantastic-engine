@@ -22,7 +22,7 @@
 /// @para{breakpoint} $breakpoint
 /// the breakpoint for the media query
 @mixin respond-to($breakpoint) {
-  @media screen and (min-width: map-get($map:variables.$breakpoints,$key:breakpoint)) {
+  @media screen and (min-width: map-get($map:variables.$breakpoints,$key:$breakpoint)) {
     @content;
   }
 }
