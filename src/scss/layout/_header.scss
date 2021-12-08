@@ -6,7 +6,7 @@
 
 .game {
   &__header {
-    border: 2px solid #fff;
+    border: rem(3px) solid var(--Header-Outline);
     border-radius: 0.5rem;
     @include utility.interpolate(
       width,
@@ -31,8 +31,8 @@
 
   &__score-display {
     background: var(--white);
-    margin: 3px 11px 4px 13px;
-    padding: 11px 22px 6px 24px;
+    margin: rem(3px) rem(11px) rem(4px) rem(13px);
+    padding: rem(11px) rem(22px) rem(6px) rem(24px);
     text-align: center;
     border-radius: 0.4rem;
   }
@@ -40,13 +40,13 @@
   &__score-heading {
     display: block;
     text-transform: uppercase;
-    font-size: 9px;
-    letter-spacing: 2px;
+    font-size: clamp(rem(9px), 2vw + 0.1rem, rem(18px));
+    letter-spacing: rem(2px);
     color: var(--Score-Text);
   }
 
   &__score {
-    font-size: rem(37px);
+    font-size: clamp(rem(37px), 4vw + 1rem, rem(64px));
     color: var(--Dark-Text);
   }
 
@@ -57,6 +57,11 @@
       max-width: 8rem;
       line-height: rem(23px);
       margin: rem(13px) rem(29px);
+    }
+
+    &__score-display {
+      margin: rem(4px) rem(22px) rem(3px) rem(19px);
+      padding: rem(15px) rem(46px) rem(5px) rem(47px);
     }
   }
 }
