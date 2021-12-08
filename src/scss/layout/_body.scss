@@ -1,0 +1,13 @@
+/*-------------------------------------------*\
+    #body-styles
+\*--------------------------------------------*/
+
+body {
+  background: linear-gradient(
+      0.24turn,
+      var(--bg-radial-gradient-to),
+      var(--bg-radial-gradient-from),
+      var(--bg-radial-gradient-to)
+    )
+    center / cover no-repeat;
+}
