@@ -7,7 +7,7 @@
 /// @param{number} @pixel
 /// pixel value to be converted to rem
 @function rem($pixel, $content: 16px) {
-  @return math.div(($pixel, $content)) * 1rem;
+  @return (math.div($pixel, $content)) * 1rem;
 }
 
 // used to define fulid properties
