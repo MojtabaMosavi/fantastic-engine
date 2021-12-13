@@ -69,6 +69,7 @@ $scissors-gradient: linear-gradient(
       z-index: -1;
     }
 
+    //rock -------------------------------------------------------------------------------
     &--scissors {
       background: linear-gradient(
         var(--scissors-gradient-from),
@@ -76,7 +77,7 @@ $scissors-gradient: linear-gradient(
       );
       grid-area: scissors;
       justify-self: center;
-      box-shadow: 0 2px 0 0 var(--scissors-shadow-outset);
+      box-shadow: 0 rem(4px) 0 0 var(--scissors-shadow-outset);
       position: relative;
 
       // inner circle-------------------------------------------------------
@@ -92,12 +93,13 @@ $scissors-gradient: linear-gradient(
       }
     }
 
+    //paper -------------------------------------------------------------------------------
     &--paper {
       background: linear-gradient(
         var(--paper-gradient-from),
         var(--paper-gradient-to)
       );
-      box-shadow: 0 2px 0 0 var(--scissors-shadow-outset);
+      box-shadow: 0 rem(4px) 0 0 var(--paper-shadow-outset);
       grid-area: paper;
       left: -18%;
       top: -10%;
@@ -111,13 +113,13 @@ $scissors-gradient: linear-gradient(
         transform: translate(-50%, -50%) rotate(122deg) translateY(50%);
       }
     }
-
+    //rock -------------------------------------------------------------------------------
     &--rock {
       background: linear-gradient(
         var(--rock-gradient-from),
         var(--rock-gradient-to)
       );
-      box-shadow: 0 2px 0 0 var(--scissors-shadow-outset);
+      box-shadow: 0 rem(4px) 0 0 var(--rock-shadow-outset);
       grid-area: rock;
       left: -58%;
       top: 17%;
@@ -131,13 +133,13 @@ $scissors-gradient: linear-gradient(
         transform: translate(-50%, -58%) rotate(196deg) translateY(28%);
       }
     }
-
+    // spock -----------------------------------------------------------------------
     &--spock {
       background: linear-gradient(
         var(--spock-gradient-from),
         var(--spock-gradient-to)
       );
-      box-shadow: 0 2px 0 0 var(--scissors-shadow-outset);
+      box-shadow: 0 rem(4px) 0 0 var(--spock-shadow-outset);
       grid-area: spock;
       left: 28%;
       top: -10%;
@@ -152,12 +154,13 @@ $scissors-gradient: linear-gradient(
       }
     }
 
+    // lizard-----------------------------------------------------------------------------
     &--lizard {
       background: linear-gradient(
         var(--lizard-gradient-from),
         var(--lizard-gradient-to)
       );
-      box-shadow: 0 2px 0 0 var(--scissors-shadow-outset);
+      box-shadow: 0 rem(4px) 0 0 var(--lizard-shadow-outset);
       grid-area: lizard;
       left: 69%;
       top: 18%;
