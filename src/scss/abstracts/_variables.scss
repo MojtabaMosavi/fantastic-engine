@@ -12,8 +12,8 @@
   --rock-gradient-to: hsl(349, 70%, 56%);
   --lizard-gradient-from: hsl(261, 73%, 60%);
   --lizard-gradient-to: hsl(261, 72%, 63%);
-  --cyan-gradient-form: hsl(189, 59%, 53%);
-  --cyan-gradient--to: hsl(189, 58%, 57%);
+  --spock-gradient-from: hsl(189, 59%, 53%);
+  --spock-gradient-to: hsl(189, 58%, 57%);
   --bg-radial-gradient-from: hsl(214, 47%, 23%);
   --bg-radial-gradient-to: hsl(237, 49%, 15%);
 
@@ -21,8 +21,17 @@
   --Dark-Text: hsl(229, 25%, 31%);
   --Score-Text: hsl(229, 64%, 46%);
   --Header-Outline: hsl(217, 16%, 45%);
+
+  // colors
   --white: hsl(0, 100%, 100%);
   --black: hsl(0, 0%, 0%);
+  --box-shadow-inset: hsl(240, 0.7%, 73.5%);
+  --scissors-shadow-outset: hsl(30.8, 94.7%, 44.7%);
+
+  // general
+  --border-width: 1.4rem;
+  --connection-line-w: 1rem;
+  --connection-line-h: 10rem;
 
   // container breakpoints
   --container-mobile: 34rem;
