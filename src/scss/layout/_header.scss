@@ -17,6 +17,7 @@
     );
 
     margin: clamp(2rem, 4vw + 1rem, 3rem) auto;
+    margin-bottom: 5.75rem;
     @include utility.flexify();
   }
 
@@ -52,6 +53,10 @@
 
   // tablet view -----------------------------------------------------------
   @include utility.respond-to("tablet") {
+    &__header {
+      margin-bottom: 3rem;
+    }
+
     &__heading {
       font-size: rem(29px);
       max-width: 8rem;
