@@ -1,4 +1,5 @@
 @use "../abstracts/functions" as *;
+@use "../abstracts" as utility;
 @import "animate.css";
 /*-------------------------------------------*\
     #body-styles
@@ -10,10 +11,9 @@ $scissors-gradient: linear-gradient(
 );
 .game {
   &__body {
-    border: 2px solid red;
-    margin-top: rem(92px);
-
     &-wrapper {
+      max-width: 25rem;
+      margin: 0 auto;
       display: grid;
       grid-template:
         [row1-start] ". scissors ." 1fr [end-row1]
@@ -173,6 +173,59 @@ $scissors-gradient: linear-gradient(
 
       &::after {
         transform: translate(-50%, -55%) rotate(-90deg) translateY(50%);
+      }
+    }
+  }
+
+  // tablet view -----------------------------------------------------------------------
+  @include utility.respond-to("tablet") {
+    &__body {
+      &-wrapper {
+        /* using the interpolate function, define a width that minimum-width is mobile-width and
+        * maximun-width desktop-width but between these threshold grows and shrinks dynamically. 
+        */
+        @include utility.interpolate(
+          max-width,
+          utility.$mobile-width,
+          utility.$desktop-width,
+          rem(375px),
+          rem(700px)
+        );
+      }
+    }
+
+    &__button {
+      // common style for all inner circles
+      &::before {
+        box-shadow: inset 0 rem(6px) 0 var(--box-shadow-inset);
+      }
+
+      &--scissors {
+        box-shadow: 0 rem(6px) 0 0 var(--scissors-shadow-outset);
+      }
+
+      &--paper {
+        top: -10%;
+        left: -29%;
+        box-shadow: 0 rem(6px) 0 0 var(--paper-shadow-outset);
+      }
+
+      &--rock {
+        left: -62%;
+        top: 19%;
+        box-shadow: 0 rem(6px) 0 0 var(--rock-shadow-outset);
+      }
+
+      &--lizard {
+        left: 89%;
+        top: 19%;
+        box-shadow: 0 rem(6px) 0 0 var(--lizard-shadow-outset);
+      }
+
+      &--spock {
+        left: 56%;
+        top: -11%;
+        box-shadow: 0 rem(6px) 0 0 var(--spock-shadow-outset);
       }
     }
   }
