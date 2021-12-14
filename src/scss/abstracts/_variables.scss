@@ -33,7 +33,7 @@
   --rock-shadow-outset: hsl(349deg 86% 34%);
 
   // general
-  --border-width: 1.4rem;
+  --border-width: clamp(1.4rem, 2vw + 1rem, 2rem);
   --connection-line-w: 1rem;
   --connection-line-h: 10rem;
 
