@@ -5,10 +5,6 @@
     #body-styles
 \*--------------------------------------------*/
 
-$scissors-gradient: linear-gradient(
-  var(--scissors-gradient-from),
-  var(--scissors-gradient-to)
-);
 .game {
   &__body {
     &-wrapper {
@@ -29,11 +25,11 @@ $scissors-gradient: linear-gradient(
     background-size: 50%;
     border: none;
     position: relative;
+    z-index: 2;
 
-    // hover state ----------------------------------------
+    // button animations -------------------------------------------------------
     &:hover {
-      &::before {
-      }
+      animation: tada 1.5s infinite;
     }
 
     /* Outer circle
@@ -65,7 +61,7 @@ $scissors-gradient: linear-gradient(
 
       // Pulses on button when hovered -------------------------------------------
       &:hover {
-        animation: pulse-mobile 1.5s linear infinite;
+        animation: pulse-xs 1.5s linear infinite;
       }
 
       /* Lines that conncet all the button are created using a pseudo element on game__button-wrapper
@@ -80,7 +76,7 @@ $scissors-gradient: linear-gradient(
         width: var(--connection-line-w);
         height: var(--connection-line-h);
         background-color: var(--bg-radial-gradient-to);
-        z-index: -1;
+        z-index: -10;
       }
     }
 
@@ -229,6 +225,12 @@ $scissors-gradient: linear-gradient(
     }
 
     &__button {
+      &-wrapper {
+        // Pulses on button when hovered -------------------------------------------
+        &:hover {
+          animation: pulse-s 1.5s linear infinite;
+        }
+      }
       // common style for all inner circles
       &::before {
         box-shadow: inset 0 rem(6px) 0 var(--box-shadow-inset);

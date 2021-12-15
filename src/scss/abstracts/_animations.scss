@@ -1,0 +1,64 @@
+/*-------------------------------------------*\
+    #animations
+\*--------------------------------------------*/
+
+/* pusle animations for button hover state, the difference between difference versions 
+*  is the circumference of the circles.
+*/
+@keyframes pulse-xs {
+  0% {
+    box-shadow: 0 0 0 0 var(--first-shadow-color);
+  }
+  25% {
+    box-shadow: 0 0 0 25px var(--first-shadow-color);
+  }
+
+  50% {
+    box-shadow: 0 0 0 50px var(--first-shadow-color),
+      0 0 0 25px var(--first-shadow-color);
+  }
+
+  100% {
+    box-shadow: 0 0 0 75px var(--third-shadow-color),
+      0 0 0 50px var(--second-shadow-color),
+      0 0 0 25px var(--first-shadow-color);
+  }
+}
+
+@keyframes pulse-s {
+  0% {
+    box-shadow: 0 0 0 0 var(--first-shadow-color);
+  }
+  25% {
+    box-shadow: 0 0 0 35px var(--first-shadow-color);
+  }
+  50% {
+    box-shadow: 0 0 0 70px var(--first-shadow-color),
+      0 0 0 20px var(--first-shadow-color);
+  }
+
+  100% {
+    box-shadow: 0 0 0 105px var(--third-shadow-color),
+      0 0 0 70px var(--second-shadow-color),
+      0 0 0 35px var(--first-shadow-color);
+  }
+}
+
+@keyframes pulse-m {
+  0% {
+    box-shadow: 0 0 0 0 var(--first-shadow-color);
+  }
+  25% {
+    box-shadow: 0 0 0 50px var(--first-shadow-color);
+  }
+  50% {
+    box-shadow: 0 0 0 100px var(--first-shadow-color),
+      0 0 0 20px var(--first-shadow-color);
+  }
+
+  100% {
+    box-shadow: 0 0 0 150px var(--third-shadow-color),
+      0 0 0 100px var(--second-shadow-color),
+      0 0 0 50px var(--first-shadow-color);
+  }
+}

@@ -25,14 +25,18 @@
   // colors
   --white: hsl(0, 100%, 100%);
   --black: hsl(0, 0%, 0%);
+
+  // shadow color
   --box-shadow-inset: hsl(240, 0.7%, 73.5%);
   --scissors-shadow-outset: hsl(30.8, 94.7%, 44.7%);
-  --spock-shadow-outset: hsl(189deg 84% 31%);
-  --paper-shadow-outset: hsl(230deg 70% 40%);
-  --lizard-shadow-outset: hsl(261deg 78% 47%);
-  --rock-shadow-outset: hsl(349deg 86% 34%);
+  --spock-shadow-outset: hsl(189deg, 84%, 31%);
+  --paper-shadow-outset: hsl(230deg, 70%, 40%);
+  --lizard-shadow-outset: hsl(261deg, 78%, 47%);
+  --rock-shadow-outset: hsl(349deg, 86%, 34%);
+  --first-shadow-color: hsl(0deg 0% 57% / 17%);
+  --second-shadow-color: hsl(0deg 0% 57% / 17%);
+  --third-shadow-color: hsl(0deg 0% 57% / 17%);
 
-  // general
   --border-width: clamp(1.4rem, 2vw + 1rem, 2rem);
   --connection-line-w: 1rem;
   --connection-line-h: 10rem;
