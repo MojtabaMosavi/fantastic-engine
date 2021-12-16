@@ -103,8 +103,8 @@
       // inner circle-------------------------------------------------------
       &::before {
         background: url("../assets/images/icon-scissors.svg") 44% 59%/45%
-            no-repeat,
-          var(--white);
+          no-repeat;
+        background-color: var(--white);
       }
     }
 
@@ -128,8 +128,8 @@
       box-shadow: 0 rem(4px) 0 0 var(--paper-shadow-outset);
 
       &::before {
-        background: url("../assets/images/icon-paper.svg") 44% 59%/45% no-repeat,
-          var(--white);
+        background: url("../assets/images/icon-paper.svg") 44% 59%/45% no-repeat;
+        background-color: var(--white);
       }
     }
     //rock -------------------------------------------------------------------------------
@@ -152,8 +152,8 @@
       box-shadow: 0 rem(4px) 0 0 var(--rock-shadow-outset);
 
       &::before {
-        background: url("../assets/images/icon-rock.svg") 44% 59%/45% no-repeat,
-          var(--white);
+        background: url("../assets/images/icon-rock.svg") 44% 59%/45% no-repeat;
+        background-color: var(--white);
       }
     }
     // spock -----------------------------------------------------------------------
@@ -176,8 +176,8 @@
       box-shadow: 0 rem(4px) 0 0 var(--spock-shadow-outset);
 
       &::before {
-        background: url("../assets/images/icon-spock.svg") 56% 49%/39% no-repeat,
-          var(--white);
+        background: url("../assets/images/icon-spock.svg") 56% 49%/39% no-repeat;
+        background-color: var(--white);
       }
     }
 
@@ -201,8 +201,8 @@
 
       &::before {
         background: url("../assets/images/icon-lizard.svg") 48% 54%/58%
-            no-repeat,
-          var(--white);
+          no-repeat;
+        background-color: var(--white);
       }
     }
   }
