@@ -7,6 +7,15 @@
 
 .game {
   &__body {
+    animation: rotateIn;
+    animation-duration: 2s;
+
+    // state modifier
+    &--hidden {
+      animation: rotateOut;
+      animation-duration: 2s;
+    }
+
     &-wrapper {
       max-width: 25rem;
       margin: 0 auto;
