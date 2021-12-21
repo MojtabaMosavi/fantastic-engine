@@ -292,4 +292,15 @@
       }
     }
   }
+
+  // tablet view -----------------------------------------------------------------------
+  @include utility.respond-to("laptop") {
+    &__button {
+      &-wrapper {
+        &:hover {
+          animation: pulse-m 1.5s linear infinite;
+        }
+      }
+    }
+  }
 }
