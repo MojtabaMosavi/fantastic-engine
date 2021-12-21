@@ -1,0 +1,182 @@
+@use "../abstracts" as *;
+@use "./body";
+
+/*-------------------------------------------*\
+    #result 
+\*--------------------------------------------*/
+
+.game {
+  // delete when finished
+  &__body {
+    display: none;
+  }
+
+  &__result {
+    border: 2px solid red;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    min-height: 25rem;
+    width: 100%;
+    margin-top: rem(115px);
+
+    /*defining a fluid width, min-width 388px and max-width = 962px
+    * between these two limits it grows and shrinks dynamically
+    */
+    @include interpolate(
+      max-width,
+      $mobile-width,
+      $desktop-width,
+      rem(388px),
+      rem(962px)
+    );
+
+    &-wrapper {
+      display: grid;
+      grid-template:
+        [row1-start] "player house" 1fr[row1-end]
+        [row2-start] "replay replay" 1fr [row2-end]/1fr 1fr;
+    }
+  }
+
+  // common styels between player and house ------------------------------------------------------
+  &__player-wrapper,
+  &__house-wrapper {
+    @extend .game__button-wrapper;
+    // deleting the line connection
+    &:after {
+      display: none;
+    }
+  }
+
+  &__player-button,
+  &__house-button {
+    @extend .game__button;
+
+    // overriding
+    &::before {
+      box-shadow: inset 0 rem(4px) 0 var(--box-shadow-inset);
+      width: calc(100% - clamp(2rem, 4vw + 1rem, 4rem));
+      height: calc(100% - clamp(2rem, 4vw + 1rem, 4rem));
+    }
+  }
+
+  // overriding the width of game__button and game__button-wrapper
+  &__player-wrapper,
+  &__house-wrapper,
+  &__player-button,
+  &__house-button {
+    width: clamp(8rem, 20vw + 1rem, 20rem);
+    height: clamp(8rem, 20vw + 1rem, 20rem);
+  }
+
+  &__player-text,
+  &__house-text {
+    color: var(--white);
+    /* font-size: clamp(rem(17px), 4vw + 1rem, rem(25px)); */
+    font-size: 17px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  // player choice------------------------------------------------------
+  &__player-choice {
+    grid-area: player;
+    display: flex;
+    flex-direction: column;
+    margin-left: rem(10px);
+  }
+
+  &__player-wrapper {
+    margin-bottom: rem(26px);
+    align-self: start;
+  }
+
+  &__player-text {
+    margin-left: rem(17px);
+  }
+
+  // house choice------------------------------------------------------
+  &__house-choice {
+    grid-area: house;
+    justify-self: end;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__house-wrapper {
+    margin-bottom: rem(26px);
+    align-self: center;
+  }
+
+  // relapy------------------------------------------------------
+  &__replay-wrapper {
+    grid-area: replay;
+    display: flex;
+    flex-direction: column;
+    margin-top: rem(56px);
+    text-align: center;
+    align-self: end;
+  }
+
+  &__winner {
+    font-size: rem(55px);
+    color: var(--white);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  &__replay {
+    color: var(--Dark-Text);
+    font-size: rem(16px);
+    text-transform: uppercase;
+    height: 3rem;
+    margin: 0 auto;
+    min-width: 14rem;
+    border-radius: 0.5rem;
+    border: none;
+    font-weight: 600;
+  }
+
+  // tablet view -----------------------------------------------------------------------------------
+  @include respond-to("tablet") {
+    &__result {
+      margin-top: 0;
+      min-height: 31rem;
+
+      &-wrapper {
+      }
+    }
+
+    // common styles------------------------------------------------------------------
+
+    &__player-button,
+    &__house-button {
+      &::before {
+        box-shadow: inset 0 rem(16px) 0 var(--box-shadow-inset);
+      }
+    }
+
+    &__player-choice,
+    &__house-choice {
+      flex-direction: column-reverse;
+    }
+
+    &__player-wrapper,
+    &__house-wrapper {
+      margin-bottom: 0;
+      margin-top: 64px;
+    }
+  }
+
+  // laptop view -----------------------------------------------------------------------------------
+  @include respond-to("laptop") {
+    &__result {
+      &-wrapper {
+        grid-template: [row1-start] " player replay house" 1fr [row1-end] / 1fr 1fr 1fr;
+        align-items: center;
+      }
+    }
+  }
+}
