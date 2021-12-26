@@ -60,7 +60,7 @@ button {
   cursor: pointer;
 
   &:focus {
-    outline: max(1px, 0.1em) dashed;
+    outline: max(1px, 0.1em) dashed var(--white);
     outline-offset: 0.25em;
   }
 
@@ -70,7 +70,7 @@ button {
   }
 
   &:focus-visible {
-    outline: max(1px, 0.1em) dashed;
+    outline: max(1px, 0.1em) dashed var(--white);
     outline-offset: 0.25em;
   }
 }
