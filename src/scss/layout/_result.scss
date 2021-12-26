@@ -162,12 +162,6 @@
     border-radius: 0.5rem;
     border: none;
     font-weight: 600;
-    box-shadow: 0 rem(7px) 0 var(--box-shadow-inset);
-    transition: all 300ms ease-in-out;
-    &:active {
-      box-shadow: 0 rem(4px) 0 var(--box-shadow-inset);
-      transform: translateY(4px);
-    }
   }
 
   // tablet view -----------------------------------------------------------------------------------
