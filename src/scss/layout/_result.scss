@@ -106,6 +106,26 @@
         }
       }
     }
+
+    // game__result--show-result------------------------------------------------------------------
+    /* This only modifies the layout of game__reuslt as oppose to game__result--intro that changes in 
+    *  many elemets within game__reuslt.
+    */
+
+    &--show-result {
+      // changing the grid layout
+      .game__result-wrapper {
+        grid-template: [row1-start] " player  house" 1fr [row1-end] / 1fr 1fr;
+      }
+
+      .game__replay-wrapper {
+        display: none;
+      }
+      .game__player-choice,
+      .game__house-choice {
+        justify-self: center;
+      }
+    }
     /*defining a fluid width, min-width 388px and max-width = 962px
     * between these two limits it grows and shrinks dynamically
     */
@@ -276,10 +296,12 @@
         }
       }
 
-      margin-top: 10rem;
-      &-wrapper {
-        grid-template: [row1-start] " player replay house" 1fr [row1-end] / 1fr 1fr 1fr;
-        align-items: center;
+      // game__result--show-result------------------------------------------------------------------
+      &--show-result {
+        // changing the grid layout
+        .game__result-wrapper {
+          grid-template: [row1-start] " player  house" 1fr [row1-end] / 1fr 1fr;
+        }
       }
     }
 
@@ -364,6 +386,17 @@
         .game__house-choice {
           margin-left: 2rem;
           justify-self: start;
+        }
+      }
+      // game__result--show-result------------------------------------------------------------------
+      &--show-result {
+        .game__player-choice {
+          margin-left: 6rem;
+        }
+
+        .game__house-choice {
+          justify-self: start;
+          margin-left: 2rem;
         }
       }
     }
