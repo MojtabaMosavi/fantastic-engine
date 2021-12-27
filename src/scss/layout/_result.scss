@@ -8,7 +8,6 @@
 .game {
   // delete when finished
   &__body {
-    display: none;
   }
 
   &__result {
@@ -20,6 +19,93 @@
     min-height: 25rem;
     width: 100%;
     margin-top: rem(115px);
+
+    &--intro {
+      // making the replay button invisible
+      .game__replay-wrapper {
+        display: none;
+      }
+
+      // restyling the house button
+      .game__house-button {
+        // modifier for removing all the styles and creating a new inner circle.
+        // common styles for all modifier
+
+        /*  width: calc(100% - clamp(2rem, 4vw + 1rem, 4rem));
+                height: calc(100% - clamp(2rem, 4vw + 1rem, 4rem)); */
+
+        &--circle-empty,
+        &--circle-scissors,
+        &--circle-paper,
+        &--circle-rock,
+        &--circle-spock,
+        &--circle-lizard {
+          // removing the pseudo element that contains the inner circle for all these modifiers
+          &::before {
+            all: unset;
+          }
+
+          // removing the animation of game__house-button for these for modifiers
+          &:hover {
+            animation: none;
+          }
+        }
+
+        // removing the inner circle containing the sprite and bax-show
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          width: 100%;
+          height: 100%;
+          background-color: var(--bg-btn-result-intro);
+          transform: translate(-50%, -50%);
+          border-radius: 100%;
+        }
+
+        &--circle-scissors {
+          &::after {
+            background: url("../assets/images/icon-scissors.svg") 44% 59%/45%
+                no-repeat,
+              var(--white);
+          }
+        }
+
+        &--circle-paper {
+          &::after {
+            background: url("../assets/images/icon-paper.svg") 44% 59%/45%
+                no-repeat,
+              var(--white);
+          }
+        }
+
+        &--circle-rock {
+          &::after {
+            background: url("../assets/images/icon-rock.svg") 44% 59%/45%
+                no-repeat,
+              var(--white);
+          }
+        }
+
+        &--circle-spock {
+          &::after {
+            background: url("../assets/images/icon-spock.svg") 44% 59%/45%
+                no-repeat,
+              var(--white);
+          }
+        }
+
+        &--circle-lizard {
+          &::after {
+            background: url("../assets/images/icon-lizard.svg") 44% 59%/45%
+                no-repeat,
+              var(--white);
+          }
+        }
+      }
+    }
     /*defining a fluid width, min-width 388px and max-width = 962px
     * between these two limits it grows and shrinks dynamically
     */
@@ -46,6 +132,13 @@
     // deleting the line connection
     &:after {
       display: none;
+    }
+
+    //modifier for removing the pulse animation from the game__house-wrapper in game__result--intro
+    &--none-animated {
+      &:hover {
+        animation: none;
+      }
     }
   }
 
@@ -107,8 +200,7 @@
       grid-area: player;
       display: flex;
       flex-direction: column;
-      margin-left: rem(10px);
-      justify-self: start;
+      justify-self: center;
     }
 
     &-text {
@@ -125,7 +217,7 @@
 
     &-choice {
       grid-area: house;
-      justify-self: end;
+      justify-self: center;
       display: flex;
       flex-direction: column;
     }
@@ -167,6 +259,23 @@
   // tablet view -----------------------------------------------------------------------------------
   @include respond-to("tablet") {
     &__result {
+      /* Modifire that modifies that state of result section.
+      *  since the layout is a litle different some properties are overridden. this modifier is intended
+      *  to be toggled when user clicks one of the buttons. 
+      */
+
+      &--intro {
+        // changing the grid layout
+        .game__result-wrapper {
+          grid-template: [row1-start] " player  house" 1fr [row1-end] / 1fr 1fr;
+        }
+
+        .game__player-choice,
+        .game__house-choice {
+          justify-self: center;
+        }
+      }
+
       margin-top: 10rem;
       &-wrapper {
         grid-template: [row1-start] " player replay house" 1fr [row1-end] / 1fr 1fr 1fr;
@@ -182,10 +291,10 @@
         box-shadow: inset 0 rem(10px) 0 var(--box-shadow-inset);
       }
 
+      // modifiers for adjusting the outer box-shadow to result section
       &--scissors {
         box-shadow: 0 rem(12px) 0 0 var(--scissors-shadow-outset);
       }
-
       &--paper {
         box-shadow: 0 rem(12px) 0 0 var(--paper-shadow-outset);
       }
@@ -234,6 +343,8 @@
     &__replay-wrapper {
       margin-top: 0;
       align-self: center;
+      animation: slideInDown;
+      animation-duration: 2s;
     }
 
     &__winner {
@@ -244,6 +355,19 @@
   }
   // tablet view -----------------------------------------------------------------------------------
   @include respond-to("laptop") {
+    &__result {
+      &--intro {
+        .game__player-choice {
+          margin-left: 6rem;
+        }
+
+        .game__house-choice {
+          margin-left: 2rem;
+          justify-self: start;
+        }
+      }
+    }
+
     // common styles------------------------------------------------------------------
     &__player-button,
     &__house-button {
