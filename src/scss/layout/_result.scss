@@ -8,11 +8,29 @@
 .game {
   &__result {
     min-height: 25rem;
-    margin: 0 auto;
-    margin-top: rem(102px);
+    margin: rem(102px) auto rem(23px) auto;
     animation: fadeOut;
     animation-duration: 2s;
 
+    /*defining a fluid width, min-width 388px and max-width = 962px
+    * between these two limits it grows and shrinks dynamically
+    */
+    @include interpolate(
+      max-width,
+      $mobile-width,
+      $desktop-width,
+      rem(388px),
+      rem(962px)
+    );
+
+    &-wrapper {
+      display: grid;
+      grid-template:
+        [row1-start] "player house" 1fr[row1-end]
+        [row2-start] "replay replay" 1fr [row2-end]/1fr 1fr;
+    }
+
+    // to animate the enternce
     &--active {
       animation: jackInTheBox;
       animation-duration: 2s;
@@ -115,24 +133,6 @@
         }
       }
     }
-
-    /*defining a fluid width, min-width 388px and max-width = 962px
-    * between these two limits it grows and shrinks dynamically
-    */
-    @include interpolate(
-      max-width,
-      $mobile-width,
-      $desktop-width,
-      rem(388px),
-      rem(962px)
-    );
-
-    &-wrapper {
-      display: grid;
-      grid-template:
-        [row1-start] "player house" 1fr[row1-end]
-        [row2-start] "replay replay" 1fr [row2-end]/1fr 1fr;
-    }
   }
 
   // common styels between player and house ------------------------------------------------------
@@ -211,6 +211,7 @@
       display: flex;
       flex-direction: column;
       justify-self: center;
+      transition: all 1s linear;
     }
 
     &-text {
@@ -230,6 +231,7 @@
       justify-self: center;
       display: flex;
       flex-direction: column;
+      transition: all 1s linear;
     }
 
     &-text {
@@ -245,7 +247,6 @@
     margin-top: rem(56px);
     text-align: center;
     align-self: end;
-
     animation: zoomIn;
     animation-duration: 2s;
   }
