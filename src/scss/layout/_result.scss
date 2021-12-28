@@ -6,40 +6,47 @@
 \*--------------------------------------------*/
 
 .game {
-  // delete when finished
-  &__body {
-  }
-
   &__result {
-    /*  border: 2px solid red; */
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
     min-height: 25rem;
-    width: 100%;
-    margin-top: rem(115px);
+    margin: 0 auto;
+    margin-top: rem(102px);
+    animation: fadeOut;
+    animation-duration: 2s;
 
+    &--active {
+      animation: jackInTheBox;
+      animation-duration: 2s;
+    }
+
+    // game__result--intro------------------------------------------------------------------
     &--intro {
       // making the replay button invisible
       .game__replay-wrapper {
         display: none;
       }
 
+      .game__house-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
       // restyling the house button
       .game__house-button {
         // modifier for removing all the styles and creating a new inner circle.
         // common styles for all modifier
-
-        /*  width: calc(100% - clamp(2rem, 4vw + 1rem, 4rem));
-                height: calc(100% - clamp(2rem, 4vw + 1rem, 4rem)); */
-
         &--circle-empty,
         &--circle-scissors,
         &--circle-paper,
         &--circle-rock,
         &--circle-spock,
         &--circle-lizard {
+          // common styles for all modifiers -----------------------------------------
+          background: var(--bg-btn-result-intro);
+          overflow: hidden;
+          width: calc(100% - clamp(2rem, 4vw + 1rem, 4rem));
+          height: calc(100% - clamp(2rem, 4vw + 1rem, 4rem));
+
           // removing the pseudo element that contains the inner circle for all these modifiers
           &::before {
             all: unset;
@@ -49,20 +56,17 @@
           &:hover {
             animation: none;
           }
-        }
+          // removing the inner circle containing the sprite and bax-show
 
-        // removing the inner circle containing the sprite and bax-show
-
-        &::after {
-          content: "";
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          width: 100%;
-          height: 100%;
-          background-color: var(--bg-btn-result-intro);
-          transform: translate(-50%, -50%);
-          border-radius: 100%;
+          &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
+          }
         }
 
         &--circle-scissors {
@@ -241,6 +245,9 @@
     margin-top: rem(56px);
     text-align: center;
     align-self: end;
+
+    animation: zoomIn;
+    animation-duration: 2s;
   }
 
   &__winner {
@@ -265,6 +272,13 @@
   // tablet view -----------------------------------------------------------------------------------
   @include respond-to("tablet") {
     &__result {
+      margin-top: 5rem;
+      &-wrapper {
+        grid-template: [row1-start] " player replay house" 1fr [row1-end] / 1fr 1fr 1fr;
+        align-items: center;
+      }
+
+      // game__result--intro------------------------------------------------------------------
       /* Modifire that modifies that state of result section.
       *  since the layout is a litle different some properties are overridden. this modifier is intended
       *  to be toggled when user clicks one of the buttons. 
@@ -343,8 +357,6 @@
     &__replay-wrapper {
       margin-top: 0;
       align-self: center;
-      animation: slideInDown;
-      animation-duration: 2s;
     }
 
     &__winner {
@@ -356,6 +368,7 @@
   // tablet view -----------------------------------------------------------------------------------
   @include respond-to("laptop") {
     &__result {
+      // game__result--intro------------------------------------------------------------------
       &--intro {
         .game__player-choice {
           margin-left: 6rem;
