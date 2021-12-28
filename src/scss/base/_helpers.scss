@@ -1,7 +1,17 @@
+@use "../abstracts" as *;
+/*-------------------------------------------*\
+    #helpers
+\*--------------------------------------------*/
+
 // a general purpose container for positioning content
 .container {
   max-width: var(--container-mobile);
   margin: 0 auto;
+
+  // tablet view -----------------------------------------------------------------------------
+  @include respond-to("tablet") {
+    max-width: 86rem;
+  }
 }
 
 // hides the cotent from being displayed visually
