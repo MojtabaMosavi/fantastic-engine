@@ -19,6 +19,7 @@
     &-wrapper {
       max-width: 25rem;
       margin: 0 auto;
+      margin-bottom: 9rem;
       display: grid;
       grid-template:
         [row1-start] ". scissors ." 1fr [end-row1]
@@ -220,6 +221,7 @@
   @include utility.respond-to("tablet") {
     &__body {
       &-wrapper {
+        margin-bottom: 1rem;
         /* using the interpolate function, define a width that minimum-width is mobile-width and
         * maximun-width desktop-width but between these threshold grows and shrinks dynamically. 
         */
