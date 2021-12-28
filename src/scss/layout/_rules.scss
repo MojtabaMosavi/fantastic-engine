@@ -1,0 +1,32 @@
+@use "../abstracts" as *;
+/*-------------------------------------------*\
+    #modal
+\*--------------------------------------------*/
+
+.game {
+  &__rules {
+    max-width: 10rem;
+    margin: 0 auto;
+    display: block;
+    font-size: rem(16px);
+    padding: rem(11px) rem(38px);
+    border: 1px solid var(--white);
+    color: var(--white);
+    border-radius: rem(10px);
+    background: inherit;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+
+  &__modal {
+    display: none;
+  }
+
+  // tablet view--------------------------------------------------------
+
+  @include respond-to("tablet") {
+    &__rules {
+      margin: 0 2rem 1rem auto;
+    }
+  }
+}
