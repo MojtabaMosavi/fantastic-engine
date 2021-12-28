@@ -62,3 +62,13 @@
       0 0 0 50px var(--first-shadow-color);
   }
 }
+
+// animations for sprites in result page
+@keyframes slideUp {
+  0% {
+    transform: translateY(250px);
+  }
+  100% {
+    transform: translateY(-250px);
+  }
+}
