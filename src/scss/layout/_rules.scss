@@ -35,5 +35,13 @@
     &__rules {
       margin: 0 2rem 1rem auto;
     }
+
+    &__modal {
+      left: 50%;
+      top: 50%;
+      transform: translate(-49.5%, -50%);
+      max-width: 25rem;
+      max-height: 29rem;
+    }
   }
 }

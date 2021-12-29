@@ -1,9 +1,12 @@
+@use "../abstracts" as *;
 /*-------------------------------------------*\
     #main
 \*--------------------------------------------*/
 
 .main {
   &__content-wrapper {
-    position: relative;
+    @include respond-to("tablet") {
+      position: relative;
+    }
   }
 }

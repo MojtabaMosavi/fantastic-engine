@@ -5,6 +5,13 @@
 
 .modal {
   background: var(--white);
+  display: none;
+  animation: fadeOut 2s;
+
+  &--active {
+    display: block;
+    animation: fadeIn 2s;
+  }
 
   &-wrapper {
     display: grid;
@@ -40,9 +47,44 @@
     }
   }
 
-  &__image-wrapper {
+  &__body {
     grid-area: img;
+  }
+
+  &__image-wrapper {
     max-width: rem(309px);
     margin: rem(19px) 0 0 rem(5px);
+  }
+
+  // table view ------------------------------------------------------------------------
+  @include respond-to("tablet") {
+    border-radius: 0.5rem;
+    &-wrapper {
+      grid-template:
+        [row1-start] "heading button" 0.2fr [row1-end]
+        [row2-start] "img img" 1fr [row2-end] / 1fr 1fr;
+      padding: rem(15px) rem(31px);
+      border-radius: 10%;
+    }
+
+    &__heading {
+      margin-top: 0;
+      justify-self: start;
+    }
+
+    &__button {
+      margin-top: 0;
+      justify-self: end;
+    }
+
+    &__body {
+      grid-area: img;
+      align-self: start;
+    }
+
+    &__image-wrapper {
+      margin: 0;
+      max-width: unset;
+    }
   }
 }
