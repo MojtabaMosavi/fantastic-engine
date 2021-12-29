@@ -1,0 +1,48 @@
+@use "../abstracts" as *;
+/*-------------------------------------------*\
+    #modal
+\*--------------------------------------------*/
+
+.modal {
+  background: var(--white);
+
+  &-wrapper {
+    display: grid;
+    grid-template:
+      [row1-start] "heading" 0.4fr [row1-end]
+      [row2-start] "img" 1fr [row2-end]
+      [row3-start] "button" 0.488fr [row3-end] / 1fr;
+    justify-items: center;
+    align-items: center;
+    min-height: 100%;
+  }
+
+  &__heading {
+    grid-area: heading;
+    font-size: 2rem;
+    margin-top: 4rem;
+    text-transform: uppercase;
+    color: var(--Dark-Text);
+  }
+
+  &__button {
+    width: 2rem;
+    height: 2em;
+    grid-area: button;
+    margin-top: rem(11px);
+    background: url("../assets/images/icon-close.svg") 57%/69% no-repeat;
+    border: none;
+    transition: all 300ms ease-in-out;
+
+    &:hover {
+      filter: invert(29%) sepia(98%) saturate(7450%) hue-rotate(357deg)
+        brightness(104%) contrast(120%);
+    }
+  }
+
+  &__image-wrapper {
+    grid-area: img;
+    max-width: rem(309px);
+    margin: rem(19px) 0 0 rem(5px);
+  }
+}
