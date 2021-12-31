@@ -13,7 +13,7 @@ export const Modal = (function(){
         modalBtn.addEventListener("click", deactivateModel)
     }
 
-    function _init(){
+    const _init = () => {
         _bindEvents()
     }
 
