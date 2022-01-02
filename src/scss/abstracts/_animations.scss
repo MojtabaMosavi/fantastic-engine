@@ -63,6 +63,24 @@
   }
 }
 
+@keyframes pulse-l {
+  0% {
+    box-shadow: 0 0 0 0 var(--first-shadow-color);
+  }
+  25% {
+    box-shadow: 0 0 0 75px var(--first-shadow-color);
+  }
+  50% {
+    box-shadow: 0 0 0 150px var(--first-shadow-color),
+      0 0 0 20px var(--first-shadow-color);
+  }
+
+  100% {
+    box-shadow: 0 0 0 225px var(--third-shadow-color),
+      0 0 0 150px var(--second-shadow-color),
+      0 0 0 75px var(--first-shadow-color);
+  }
+}
 // animations for sprites in result page
 @keyframes slideUp {
   0% {
