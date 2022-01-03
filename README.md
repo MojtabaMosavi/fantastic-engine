@@ -58,9 +58,12 @@ Users should be able to:
 ### What I learned
 
 - Basic understading of how webpack works and how it's used. In this project I used a three different files for two configuration modes which are:
-  * webpack.common.js
-  * webpack.dev.js
-  * webpack.prod.js  
+  * webpack.common.js, captures the common setting between the two different modes that webpack has to avoid redundancey (Dry code).
+  * webpack.dev.js, development settings. 
+  * webpack.prod.js  development setting whose main difference from production setting is a set of optimization like minification and uglyfing for efficiency.
+- How important it is that all the movements of components in an UI mimice the movements in the natural world instead of sudden and spantaneous movements, for instance imagine some components that gradually comes into view rather than just appearing out of nowhere and in short span of time like nano seconds. 
+- Developing a proper rutine for planning before starting writing code and trying to get good grasp on what are you building by asking a tons of qestions regarding each component.
+- 
 
 Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
 
