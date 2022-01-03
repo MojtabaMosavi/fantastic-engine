@@ -57,10 +57,10 @@ Users should be able to:
 
 ### What I learned
 
-- Basic understading of how webpack works and how it's used. In this project I used a three different files for two configuration modes which are production and development. 
-* webpack.common.js
-* webpack.dev.js
-* webpack.prod.js  
+- Basic understading of how webpack works and how it's used. In this project I used a three different files for two configuration modes which are:
+  * webpack.common.js
+  * webpack.dev.js
+  * webpack.prod.js  
 
 Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
 
