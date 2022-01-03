@@ -30,7 +30,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH/hub/rock-paper-scissors-game-yjNd7FJNc/edit](https://your-solution-url.com)
-- Live Site URL: [https://rock-paper-scissors-lizard-spock2.netlify.app/](https://your-live-site-url.com)
+- Live Site URL: [https://rock-paper-scissors-lizard-spock2.netlify.app/](https://rock-paper-scissors-lizard-spock2.netlify.app/)
 
 ## My process
 - Initialize a git repository
