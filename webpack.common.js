@@ -18,6 +18,12 @@ module.exports = {
     module:{
 
         rules:[
+
+        // transpliting to ES5 
+        {
+            test: /\.js$/,
+            use:["babel-loader"]
+        },
         // html files ------------------------------------------
             {
                 test: /\.html$/,
